@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shopping_fast/app/data/models/items_models.dart';
 
 class ItemProvider {
@@ -7,7 +8,7 @@ class ItemProvider {
       Items(
         harga: 20000,
         nama: "Pisau",
-        img: null,
+        img: 'tokyo.jpg',
         ranting: 3.4,
         deskripsi: null,
         stock: 10,
@@ -15,7 +16,7 @@ class ItemProvider {
       Items(
         harga: 30000,
         nama: "mangkok",
-        img: null,
+        img: 'tokyo.jpg',
         ranting: 4,
         deskripsi: null,
         stock: 5,

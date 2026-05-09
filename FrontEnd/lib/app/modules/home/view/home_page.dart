@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         }
 
         return GridView.builder(
-          padding: const EdgeInsets.only(top: 125, left: 12, right: 12, bottom: 12 ),
+          padding: const EdgeInsets.only(top: 140, left: 12, right: 12, bottom: 12 ),
           itemCount: controller.listItem.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
