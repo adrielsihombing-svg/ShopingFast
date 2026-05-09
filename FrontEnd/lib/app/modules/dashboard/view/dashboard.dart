@@ -5,7 +5,7 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:shopping_fast/app/modules/dashboard/controller/dashboard_controller.dart';
 import 'package:shopping_fast/app/modules/home/controller/home_controller.dart';
-import '../../home/view/home_page.dart';
+import 'package:shopping_fast/app/modules/home/view/home_page.dart';
 import '../../List_shopping/view/List.dart';
 import '../../user_profil/view/Profil_page.dart';
 import '../../wallet/view/wallet_page.dart';
@@ -19,14 +19,17 @@ class Dashboard extends StatefulWidget {
 
 class _DasboartState extends State<Dashboard> {
   final DashboardController controller = Get.find<DashboardController>();
-  final searchCtrl = Get.find<HomeController>();
+  final HomeController searchCtrl = Get.find<HomeController>();
 
-  final List<Widget> screen = [
-    HomePage(),
-    ProfilPage(),
-    WalletPage(),
-    ListItem(),
-  ];
+  Widget buildScreen(int index) {
+  switch (index) {
+    case 0: return HomePage();
+    case 1: return ProfilPage();
+    case 2: return WalletPage();
+    case 3: return ListItem();
+    default: return SizedBox.shrink();
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -137,10 +140,7 @@ class _DasboartState extends State<Dashboard> {
               : null,
           shadowColor: Colors.black.withOpacity(0.5),
         ),
-        body: IndexedStack(
-          index: controller.curretIndex.value,
-          children: screen,
-        ),
+        body: buildScreen(controller.curretIndex.value),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.curretIndex.value,
           onTap: (index) => controller.changesIndex(index),
