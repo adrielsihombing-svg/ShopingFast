@@ -6,6 +6,7 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:shopping_fast/app/data/models/items_models.dart';
 import 'package:shopping_fast/app/modules/home/controller/home_controller.dart';
 import 'package:shopping_fast/app/modules/home/controller/item_controller.dart';
+import 'package:shopping_fast/widgets/itemsCard.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         }
 
         return GridView.builder(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.only(top: 125, left: 12, right: 12, bottom: 12 ),
           itemCount: controller.listItem.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -47,10 +48,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildCardItem(Items data) {
-    return Card(
-      child: Center(
-        child: Text(data.nama ?? '')
-        )
-      );
+    return ItemCard(data: data);
   }
 }

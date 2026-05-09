@@ -22,14 +22,19 @@ class _DasboartState extends State<Dashboard> {
   final HomeController searchCtrl = Get.find<HomeController>();
 
   Widget buildScreen(int index) {
-  switch (index) {
-    case 0: return HomePage();
-    case 1: return ProfilPage();
-    case 2: return WalletPage();
-    case 3: return ListItem();
-    default: return SizedBox.shrink();
+    switch (index) {
+      case 0:
+        return HomePage();
+      case 1:
+        return ProfilPage();
+      case 2:
+        return WalletPage();
+      case 3:
+        return ListItem();
+      default:
+        return SizedBox.shrink();
+    }
   }
-}
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +42,29 @@ class _DasboartState extends State<Dashboard> {
       () => Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
+          backgroundColor: Colors.transparent, // pastikan ini ada
+          elevation: 0,
           flexibleSpace: ClipRect(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Container(color: Colors.transparent),
+              child: Container(color:Colors.white.withOpacity(0.2)),
             ),
           ),
           leading: Padding(
-            padding: const EdgeInsets.only(left: 8,right: 8,top: 8,bottom: 8),
+            padding: const EdgeInsets.only(
+              left: 8,
+              right: 8,
+              top: 8,
+              bottom: 8,
+            ),
             child: CircleAvatar(
               radius: 20,
               backgroundColor: Colors.blue,
-              child: Icon(Icons.verified_outlined, size: 30, color: Colors.white),
+              child: Icon(
+                Icons.verified_outlined,
+                size: 30,
+                color: Colors.white,
+              ),
             ),
           ),
           title: Column(
@@ -116,24 +132,24 @@ class _DasboartState extends State<Dashboard> {
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(15, 0, 15, 8),
                     child: SizedBox(
-                    height: 45,
-                    child: TextField(
-                      controller: searchCtrl.search,
-                      decoration: InputDecoration(
-                        labelText: "Search",
-                        fillColor: Color.fromARGB(255, 178, 202, 244),
-                        focusColor: Colors.blueAccent,
-                        prefixIcon: Icon(Icons.search),
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(25)),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(25)),
-                          borderSide: BorderSide(color: Colors.blue),
+                      height: 45,
+                      child: TextField(
+                        controller: searchCtrl.search,
+                        decoration: InputDecoration(
+                          labelText: "Search",
+                          fillColor: Color.fromARGB(255, 178, 202, 244),
+                          focusColor: Colors.blueAccent,
+                          prefixIcon: Icon(Icons.search),
+                          filled: true,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(25)),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(25)),
+                            borderSide: BorderSide(color: Colors.blue),
+                          ),
                         ),
                       ),
-                    ),
                     ),
                   ),
                 )
