@@ -26,11 +26,11 @@ class _DasboartState extends State<Dashboard> {
       case 0:
         return HomePage();
       case 1:
-        return ProfilPage();
+        return ListItem();
       case 2:
         return WalletPage();
       case 3:
-        return ListItem();
+        return ProfilPage();
       default:
         return SizedBox.shrink();
     }

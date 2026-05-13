@@ -35,8 +35,8 @@ class _HomePageState extends State<HomePage> {
           itemCount: controller.listItem.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 10,
+            mainAxisSpacing: 7,
+            crossAxisSpacing: 7,
             childAspectRatio: 0.8,
           ),
           itemBuilder: (context, index) {

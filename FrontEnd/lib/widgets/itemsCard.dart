@@ -32,7 +32,7 @@ class _ItemCardState extends State<ItemCard> {
                 height: 110,
                 fit: BoxFit.cover,
               ),
-
+      
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -49,24 +49,24 @@ class _ItemCardState extends State<ItemCard> {
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
                             child: Text(
-                              '${widget.data.nama}',
+                              'Product : ${widget.data.nama}',
                               style: TextStyle(
                                 fontSize: 12,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
                             child: Text(
-                              '${widget.data.harga}',
+                              'Price : Rp${widget.data.harga},0-',
                               style: TextStyle(
                                 fontSize: 12,
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
-                          SizedBox(height: 5),
+                          SizedBox(height: 2),
                           Padding(
                             padding: const EdgeInsets.only(left: 3),
                             child: Text(
@@ -77,7 +77,7 @@ class _ItemCardState extends State<ItemCard> {
                           ),
                         ],
                       ),
-
+      
                       Padding(
                         padding: EdgeInsets.only(right: 5, top: 2),
                         child: Row(
