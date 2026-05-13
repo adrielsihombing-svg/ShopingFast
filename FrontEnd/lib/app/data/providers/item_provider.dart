@@ -21,6 +21,46 @@ class ItemProvider {
         deskripsi: null,
         stock: 5,
       ),
+      Items(
+        harga: 10000,
+        nama: "Piring",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+      ),
+      Items(
+        harga: 10000,
+        nama: "Piring",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+      ),
+      Items(
+        harga: 10000,
+        nama: "Piring",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+      ),
+      Items(
+        harga: 10000,
+        nama: "Piring",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+      ),
+      Items(
+        harga: 10000,
+        nama: "Piring",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+      )
     ];
   }
 }
