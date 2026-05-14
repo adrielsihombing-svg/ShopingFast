@@ -41,7 +41,7 @@ class _DasboartState extends State<Dashboard> {
     return Obx(
       () => Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
+        appBar: controller.curretIndex.value == 3 || controller.curretIndex.value == 2 ? null : AppBar(
           backgroundColor: Colors.transparent, // pastikan ini ada
           elevation: 0,
           flexibleSpace: ClipRect(
