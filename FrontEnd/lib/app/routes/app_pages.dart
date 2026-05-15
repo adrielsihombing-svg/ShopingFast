@@ -4,6 +4,7 @@ import 'package:shopping_fast/app/modules/dashboard/view/dashboard.dart';
 import 'package:shopping_fast/app/modules/home/bindings/home_bindings.dart';
 import 'package:shopping_fast/app/modules/home/view/home_page.dart';
 import 'package:shopping_fast/app/routes/routes.dart';
+import 'package:shopping_fast/widgets/ItemsBio.dart';
 
 class AppPages {
   final INITIAL = Routes.Dashboard;
@@ -15,5 +16,10 @@ class AppPages {
       page: () => Dashboard(),
       binding: DashboardBindings()
       ),
+
+    GetPage(
+      name: Routes.Home, 
+      page: () => Itemsbio()
+      )
   ];
 }

@@ -14,11 +14,12 @@ class _ItemCardState extends State<ItemCard> {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Card(
-        clipBehavior: Clip.hardEdge,
-        elevation: 4,
+    return Card(
+      clipBehavior: Clip.hardEdge,
+      elevation: 4,
+      child: InkWell(
+        onTap: (){},
+        splashColor: const Color.fromARGB(255, 148, 184, 247),
         child: SizedBox(
           width: 100,
           height: 100,
@@ -32,7 +33,7 @@ class _ItemCardState extends State<ItemCard> {
                 height: 110,
                 fit: BoxFit.cover,
               ),
-      
+            
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -77,7 +78,7 @@ class _ItemCardState extends State<ItemCard> {
                           ),
                         ],
                       ),
-      
+            
                       Padding(
                         padding: EdgeInsets.only(right: 5, top: 2),
                         child: Row(
