@@ -42,7 +42,7 @@ class _DasboartState extends State<Dashboard> {
       () => Scaffold(
         extendBodyBehindAppBar: true,
         appBar: controller.curretIndex.value == 3 || controller.curretIndex.value == 2 ? null : AppBar(
-          backgroundColor: Colors.transparent, // pastikan ini ada
+          backgroundColor: Colors.transparent, 
           elevation: 0,
           flexibleSpace: ClipRect(
             child: BackdropFilter(

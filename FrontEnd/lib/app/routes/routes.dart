@@ -9,4 +9,5 @@ abstract class Routes {
   static const WALLET = "/wallet";
   static const List = "/List";
   static const Home = "/home";
+  static const cardItem = "/CardItem";
 }

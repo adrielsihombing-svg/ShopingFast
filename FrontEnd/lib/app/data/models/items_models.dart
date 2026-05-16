@@ -5,6 +5,7 @@ class Items {
   final double? ranting;
   final String? deskripsi;
   final int? stock;
+  final String? toko;
 
   Items({
     required this.harga,
@@ -13,6 +14,7 @@ class Items {
     required this.ranting,
     required this.deskripsi,
     required this.stock,
+    required this.toko,
   });
       
   factory Items.fromJson(Map<String, dynamic> json) => Items(
@@ -22,5 +24,6 @@ class Items {
     ranting: json['ranting'],
     deskripsi: json['deskripsi'],
     stock: json['stock'],
+    toko:  json['toko'],
   );
 }

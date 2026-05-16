@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:readmore/readmore.dart';
-import 'package:shopping_fast/widgets/BuyBar.dart';
+import 'package:shopping_fast/app/data/models/items_models.dart';
+import 'package:shopping_fast/app/modules/home/controller/comment_controller.dart';
+import 'package:shopping_fast/app/modules/home/view/BuyBar.dart';
 
 class Itemsbio extends StatefulWidget {
   const Itemsbio({super.key});
@@ -11,26 +16,38 @@ class Itemsbio extends StatefulWidget {
 }
 
 class _ItemsbioState extends State<Itemsbio> {
-  final TextEditingController controller = new TextEditingController();
-  final List<String> massanges = [];
+  final commentCtrl = Get.find<CommentController>();
+  late List<String> massanges = [];
   int deteksi = 0;
+  late int cardId;
+  late Items data;
+
+  @override
+  void initState() {
+    super.initState();
+    cardId = Get.arguments['cardId'];
+    data = Get.arguments['data'];
+    massanges = commentCtrl.getKomentar(cardId);
+  }
 
   void sendMessangges() {
-    final text = controller.text.trim();
+    final text = commentCtrl.ctrl.text.trim();
     if (text.isEmpty) {
       return;
     }
 
     setState(() {
       massanges.insert(0, text);
+      commentCtrl.addKomentar(cardId, text);
+      deteksi++;
     });
 
-    controller.clear();
+    commentCtrl.ctrl.clear();
   }
 
   @override
   void dispose() {
-    controller.dispose();
+    commentCtrl.dispose();
     super.dispose();
   }
 
@@ -108,7 +125,7 @@ class _ItemsbioState extends State<Itemsbio> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "NAMA PRODUCT",
+                        data.nama ?? 'Nama Product',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
@@ -118,7 +135,7 @@ class _ItemsbioState extends State<Itemsbio> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 2),
                       child: Text(
-                        "Rp.00000,0-",
+                        "Rp.${data.harga ?? '0000'},0-",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w300,
@@ -147,6 +164,10 @@ class _ItemsbioState extends State<Itemsbio> {
                       ),
                     ),
 
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("Stock : ${data.stock ?? '0'}", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
@@ -178,7 +199,7 @@ class _ItemsbioState extends State<Itemsbio> {
                               Icon(Icons.star, size: 20, color: Colors.yellow),
                               SizedBox(width: 8),
                               Text(
-                                "4.5",
+                                "${data.ranting ?? 'No data'}",
                                 style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
@@ -211,7 +232,7 @@ class _ItemsbioState extends State<Itemsbio> {
                             width: 220,
                             height: 30,
                             child: TextField(
-                              controller: controller,
+                              controller: commentCtrl.ctrl,
                               decoration: InputDecoration(
                                 hintText: 'Komentar..',
                               ),
@@ -285,62 +306,73 @@ class _ItemsbioState extends State<Itemsbio> {
                                 ),
 
                                 SizedBox(height: 4,),
-                                Container(
-                                  width: 350,
-                                  height: 300,
-                                  child: ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: massanges.length,
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                        margin: const EdgeInsets.only(
-                                          bottom: 8,
-                                        ),
-                                        child: Row(
-                                          children: [
-                                            CircleAvatar(
-                                              radius: 15,
-                                              backgroundImage: AssetImage(
-                                                "assets/img/tokyo.jpg",
-                                              ),
-                                            ),
-                                            SizedBox(width: 6),
-                                            Column(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.start,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  "@Adriel Sihombing",
-                                                  style: TextStyle(
-                                                    fontSize: 13,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    width: 350,
+                                    height: 300,
+                                    child: deteksi > 0? ListView.builder(
+                                      shrinkWrap: true,
+                                      itemCount: massanges.length,
+                                      itemBuilder: (context, index) {
+                                        return Container(
+                                          margin: const EdgeInsets.only(
+                                            bottom: 8,
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 15,
+                                                backgroundImage: AssetImage(
+                                                  "assets/img/tokyo.jpg",
                                                 ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                        left: 4,
-                                                      ),
-                                                  child: Text(
-                                                    massanges[index],
-                                                    style: const TextStyle(
-                                                      color: Color.fromARGB(
-                                                        255,
-                                                        0,
-                                                        0,
-                                                        0,
+                                              ),
+                                              SizedBox(width: 6),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    "@Adriel Sihombing",
+                                                    style: TextStyle(
+                                                      fontSize: 13,
+                                                      fontWeight: FontWeight.w500,
+                                                    ),
+                                                  ),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                          left: 4,
+                                                        ),
+                                                    child: Text(
+                                                      massanges[index],
+                                                      style: const TextStyle(
+                                                        color: Color.fromARGB(
+                                                          255,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    },
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    ) : Container(
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        children: [
+                                          Text("Komentar kosong", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),)
+                                        ],
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ],
@@ -356,8 +388,8 @@ class _ItemsbioState extends State<Itemsbio> {
           ],
         ),
       ),
-
-      bottomNavigationBar: SafeArea(child: BuyBar()),
+      bottomNavigationBar: SafeArea(
+        child: BuyBar()),
     );
   }
 }

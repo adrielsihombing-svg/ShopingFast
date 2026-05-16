@@ -37,17 +37,17 @@ class _HomePageState extends State<HomePage> {
             crossAxisCount: 2,
             mainAxisSpacing: 7,
             crossAxisSpacing: 7,
-            childAspectRatio: 0.8,
+            childAspectRatio: 0.65,
           ),
           itemBuilder: (context, index) {
-            return _buildCardItem(controller.listItem[index]);
+            return _buildCardItem(controller.listItem[index], index);
           },
         );
       }),
     );
   }
 
-  Widget _buildCardItem(Items data) {
-    return ItemCard(data: data);
+  Widget _buildCardItem(Items data, int id) {
+    return ItemCard(data: data, id: id, key: ValueKey(id),);
   }
 }

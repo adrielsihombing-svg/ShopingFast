@@ -16,7 +16,16 @@ class _BuyBarState extends State<BuyBar> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: const BoxDecoration(
-        color: Color(0xFF1E3A5F),
+        gradient: LinearGradient(
+          colors: [
+            Colors.blue,
+            Colors.blueAccent,
+            Colors.lightBlue,
+            Color.fromARGB(255, 142, 198, 244),
+            Colors.lightBlue,
+            Colors.blueAccent,
+          ]
+          ),
         borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       child: AnimatedSwitcher(

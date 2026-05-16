@@ -12,6 +12,7 @@ class ItemProvider {
         ranting: 3.4,
         deskripsi: null,
         stock: 10,
+        toko: "Toko Mikasa"
       ),
       Items(
         harga: 30000,
@@ -20,6 +21,7 @@ class ItemProvider {
         ranting: 4,
         deskripsi: null,
         stock: 5,
+        toko: "Toko Mikasa"
       ),
       Items(
         harga: 10000,
@@ -28,6 +30,34 @@ class ItemProvider {
         ranting: 5,
         deskripsi: null,
         stock: 5,
+        toko: "Toko Kurumi (my bini)"
+      ),
+      Items(
+        harga: 25000,
+        nama: "Nampan",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 12,
+        toko: "Toko kurumi (my bini)"
+      ),
+      Items(
+        harga: 17000,
+        nama: "Nasi Lemak",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+        toko: "Warung adriel & kurumi-chan"
+      ),
+      Items(
+        harga: 10000,
+        nama: "Sayur Bayam",
+        img: 'tokyo.jpg',
+        ranting: 5,
+        deskripsi: null,
+        stock: 5,
+        toko: "Toko Samudra"
       ),
       Items(
         harga: 10000,
@@ -36,30 +66,7 @@ class ItemProvider {
         ranting: 5,
         deskripsi: null,
         stock: 5,
-      ),
-      Items(
-        harga: 10000,
-        nama: "Piring",
-        img: 'tokyo.jpg',
-        ranting: 5,
-        deskripsi: null,
-        stock: 5,
-      ),
-      Items(
-        harga: 10000,
-        nama: "Piring",
-        img: 'tokyo.jpg',
-        ranting: 5,
-        deskripsi: null,
-        stock: 5,
-      ),
-      Items(
-        harga: 10000,
-        nama: "Piring",
-        img: 'tokyo.jpg',
-        ranting: 5,
-        deskripsi: null,
-        stock: 5,
+        toko: "Toko Ambatukam"
       )
     ];
   }
