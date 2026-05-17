@@ -11,8 +11,21 @@ class _ListItemState extends State<ListItem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Ini List"),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 100, left: 8, right: 8),
+        child: Column(
+          children: [
+            Card(
+              clipBehavior: Clip.hardEdge,
+              child: Container(
+                width: 350,
+                height: 150,
+                color: Colors.grey,
+                child: Column(),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

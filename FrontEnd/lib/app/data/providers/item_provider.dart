@@ -10,7 +10,7 @@ class ItemProvider {
         nama: "Pisau",
         img: 'tokyo.jpg',
         ranting: 3.4,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 10,
         toko: "Toko Mikasa"
       ),
@@ -19,7 +19,7 @@ class ItemProvider {
         nama: "mangkok",
         img: 'tokyo.jpg',
         ranting: 4,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 5,
         toko: "Toko Mikasa"
       ),
@@ -28,7 +28,7 @@ class ItemProvider {
         nama: "Piring",
         img: 'tokyo.jpg',
         ranting: 5,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 5,
         toko: "Toko Kurumi (my bini)"
       ),
@@ -37,25 +37,25 @@ class ItemProvider {
         nama: "Nampan",
         img: 'tokyo.jpg',
         ranting: 5,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 12,
-        toko: "Toko kurumi (my bini)"
+        toko: "Toko kurumi"
       ),
       Items(
         harga: 17000,
         nama: "Nasi Lemak",
         img: 'tokyo.jpg',
         ranting: 5,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 5,
-        toko: "Warung adriel & kurumi-chan"
+        toko: "Warung kurumi-chan"
       ),
       Items(
         harga: 10000,
         nama: "Sayur Bayam",
         img: 'tokyo.jpg',
         ranting: 5,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 5,
         toko: "Toko Samudra"
       ),
@@ -64,9 +64,9 @@ class ItemProvider {
         nama: "Piring",
         img: 'tokyo.jpg',
         ranting: 5,
-        deskripsi: null,
+        deskripsi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.",
         stock: 5,
-        toko: "Toko Ambatukam"
+        toko: "Toko Amba"
       )
     ];
   }

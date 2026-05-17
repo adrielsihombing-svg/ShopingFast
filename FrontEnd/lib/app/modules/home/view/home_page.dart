@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
             crossAxisCount: 2,
             mainAxisSpacing: 7,
             crossAxisSpacing: 7,
-            childAspectRatio: 0.65,
+            childAspectRatio: 0.55,
           ),
           itemBuilder: (context, index) {
             return _buildCardItem(controller.listItem[index], index);

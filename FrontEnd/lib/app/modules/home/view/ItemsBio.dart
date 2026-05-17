@@ -146,7 +146,7 @@ class _ItemsbioState extends State<Itemsbio> {
                     Padding(
                       padding: const EdgeInsets.only(left: 8.0, top: 4),
                       child: ReadMoreText(
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est nec metus vulputate, ac vestibulum purus suscipit. Nullam pretium ultrices neque, non ultricies nisi venenatis vitae.',
+                        '${data.deskripsi ?? 'No Deskription'}',
                         trimLines: 3,
                         trimMode: TrimMode.Line,
                         trimCollapsedText: 'Baca Selanjutnya',
@@ -184,7 +184,7 @@ class _ItemsbioState extends State<Itemsbio> {
                               Padding(
                                 padding: const EdgeInsets.only(left: 10.0),
                                 child: Text(
-                                  "Tokoh Sayuran",
+                                  "${data.toko}",
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontWeight: FontWeight.w400,
